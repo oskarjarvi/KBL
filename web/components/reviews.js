@@ -32,10 +32,10 @@ const CustomArrow = ({ onClick, ...rest }) => {
         carouselState: { currentSlide, deviceType }
     } = rest;
     if (direction === 'right') {
-        return <button style={{ position: 'absolute', right: -5, border: 0, width: 50, height: 50, zIndex: 90000, backgroundColor: 'transparent' }} ><Image src="/blueRight.svg" alt="rightArrow" color={'red'} layout="fill" onClick={() => onClick()} /></button>
+        return <button style={{ position: 'absolute', right: -5, border: 0, width: 50, height: 50, zIndex: 90000, backgroundColor: 'transparent' }} ><img src="/blueRight.svg" alt="rightArrow" color={'red'} layout="fill" onClick={() => onClick()} /></button>
     }
     if (direction === 'left') {
-        return <button style={{ position: 'absolute', left: -5, border: 0, width: 50, height: 50, zIndex: 90000, backgroundColor: 'transparent' }} ><Image src="/blueLeft.svg" alt="leftArrow" color={'red'} layout="fill" onClick={() => onClick()} /></button>
+        return <button style={{ position: 'absolute', left: -5, border: 0, width: 50, height: 50, zIndex: 90000, backgroundColor: 'transparent' }} ><img src="/blueLeft.svg" alt="leftArrow" color={'red'} layout="fill" onClick={() => onClick()} /></button>
 
     }
 };

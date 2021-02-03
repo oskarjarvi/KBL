@@ -13,6 +13,7 @@
   "license": "ISC",
   "dependencies": {
     "@sanity/client": "^2.1.4",
+    "@svgr/webpack": "^5.5.0",
     "bootstrap": "^4.6.0",
     "next": "^10.0.5",
     "react": "^17.0.1",

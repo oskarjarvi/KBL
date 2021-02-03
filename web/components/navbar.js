@@ -1,13 +1,12 @@
 import Link from 'next/link'
 import styles from './navbar.module.css'
-import Image from 'next/image'
 
 const Navbar = () => {
 
     return (
         <div className={styles.navbar}>
             <div className={styles.navbarLogo}>
-                <Image src="/whiteLogo.svg" alt="KBL logo" height="100" width="180" />
+                <img src='./whiteLogo.svg' alt="KBL logo" style={{ width: 100, height: 100 }} />
             </div>
             <div className={styles.linkContainer}>
                 <div className={styles.navbarLink}><Link href="/" ><a>Hem</a></Link></div>
