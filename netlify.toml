@@ -1,0 +1,7 @@
+[build]
+  command = "npm run build"
+  base = "KBL/web"
+  publish = "out"
+  command = "next build && next export"
+[[plugins]]
+  package = "@netlify/plugin-nextjs"
