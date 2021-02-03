@@ -1,5 +1,5 @@
 [build]
-  base = "KBL/web"
+  base = "web"
   publish = "out"
   command = "next build && next export"
 [[plugins]]
