@@ -5,38 +5,20 @@ import ReviewModal from './reviewModal'
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 
-
-
 const responsive = {
     desktop: {
         breakpoint: { max: 3000, min: 1024 },
-        items: 2,
-        paritialVisibilityGutter: 60
+        items: 3
     },
     tablet: {
         breakpoint: { max: 1024, min: 464 },
-        items: 2,
-        paritialVisibilityGutter: 50
+        items: 2
     },
     mobile: {
         breakpoint: { max: 464, min: 0 },
-        items: 1,
-        paritialVisibilityGutter: 30
+        items: 1
     }
-};
-const CustomArrow = ({ onClick, ...rest }) => {
-    const {
-        onMove,
-        direction,
-        carouselState: { currentSlide, deviceType }
-    } = rest;
-    if (direction === 'right') {
-        return
-    }
-    if (direction === 'left') {
-        return
 
-    }
 };
 
 const ButtonGroup = ({ next, previous, ...rest }) => {
@@ -70,8 +52,6 @@ const Reviews = (props) => {
                         showDots={false}
                         ssr
                         arrows={false}
-                        containerClass="container"
-                        itemClass="image-item"
                         customButtonGroup={<ButtonGroup />}
                         removeArrowOnDeviceType={["tablet", "mobile"]}
                         renderButtonGroupOutside

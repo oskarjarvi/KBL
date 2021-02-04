@@ -179,10 +179,10 @@ text-align: center;
     margin-top: 90px;
     position: relative;
 }
-.reviewItem {
+/* .reviewItem {
     padding-top: 30px;
     margin-right: 35px;
-}
+} */
 .leftButton {
     position: absolute; 
     left:-100px;
