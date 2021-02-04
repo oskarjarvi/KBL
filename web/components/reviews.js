@@ -4,7 +4,6 @@ import styles from './component.module.css'
 import ReviewModal from './reviewModal'
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
-import Image from 'next/image'
 
 
 
@@ -32,14 +31,27 @@ const CustomArrow = ({ onClick, ...rest }) => {
         carouselState: { currentSlide, deviceType }
     } = rest;
     if (direction === 'right') {
-        return <button style={{ position: 'absolute', right: -5, border: 0, width: 50, height: 50, zIndex: 90000, backgroundColor: 'transparent' }} ><img src="/blueRight.svg" alt="rightArrow" color={'red'} layout="fill" onClick={() => onClick()} /></button>
+        return
     }
     if (direction === 'left') {
-        return <button style={{ position: 'absolute', left: -5, border: 0, width: 50, height: 50, zIndex: 90000, backgroundColor: 'transparent' }} ><img src="/blueLeft.svg" alt="leftArrow" color={'red'} layout="fill" onClick={() => onClick()} /></button>
+        return
 
     }
 };
 
+const ButtonGroup = ({ next, previous, ...rest }) => {
+    const {
+        carouselState: { currentSlide, totalItems, slidesToShow }
+    } = rest;
+    let prevSlides = currentSlide === 0 ? '0.3' : '1'
+    let nextSlides = currentSlide === totalItems - slidesToShow ? '0.3' : '1'
+    return (
+        <div className="carousel-button-group">
+            <button className={styles.leftButton}><img src="/blueLeft.svg" alt="leftArrow" style={{ opacity: prevSlides, width: '100%', height: '100%', objectFit: 'contain' }} onClick={() => previous()} /></button>
+            <button className={styles.rightButton} ><img src="/blueRight.svg" alt="rightArrow" style={{ opacity: nextSlides, width: '100%', height: '100%', objectFit: 'contain' }} onClick={() => next()} /></button>
+        </div>
+    );
+};
 const Reviews = (props) => {
     const [data, setData] = useState([])
     const [showModal, setShowModal] = useState(false)
@@ -57,11 +69,12 @@ const Reviews = (props) => {
                         responsive={responsive}
                         showDots={false}
                         ssr
+                        arrows={false}
                         containerClass="container"
                         itemClass="image-item"
-                        customLeftArrow={<CustomArrow direction='left' />}
-                        customRightArrow={<CustomArrow direction='right' />}
+                        customButtonGroup={<ButtonGroup />}
                         removeArrowOnDeviceType={["tablet", "mobile"]}
+                        renderButtonGroupOutside
                         centerMode>
                         {data.map((item, i) => (
                             <div key={i} className={styles.reviewItem}>

@@ -164,10 +164,29 @@ text-align: center;
     width: 50%;
     height: 400px;
     margin-top: 90px;
+    position: relative;
 }
 .reviewItem {
     padding-top: 30px;
     margin-right: 35px;
+}
+.leftButton {
+    position: absolute; 
+    left:-100px;
+    top:50%;
+    border: 0; 
+    width: 50px; 
+    height: 50px;
+    background-color: transparent;  
+}
+.rightButton {
+    position: absolute; 
+    right:-100px;
+    top:50%;
+    border: 0; 
+    width: 50px; 
+    height: 50px;
+    background-color: transparent;  
 }
 .slideIcon {
     position: absolute;
