@@ -13,3 +13,6 @@ body {
     text-decoration:none; 
     cursor: crosshair;
   }
+  *, *:before, *:after {
+    box-sizing: border-box;
+  }
