@@ -4,7 +4,6 @@ import styles from './component.module.css'
 import ReviewModal from './reviewModal'
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
-import { Spinner } from 'react-bootstrap'
 
 const responsive = {
     desktop: {
@@ -36,41 +35,36 @@ const ButtonGroup = ({ next, previous, ...rest }) => {
     );
 };
 const Reviews = (props) => {
-    const [data, setData] = useState(null)
+    const [data, setData] = useState([])
     const [showModal, setShowModal] = useState(false)
-    const fetchData = async () => {
-        let response = await client.fetch('*[_type == "review"]').then(res => setData(res))
-        setData(response)
-    }
+
     useEffect(() => {
-        fetchData()
+        client.fetch('*[_type == "review"]').then(res => setData(res))
     }, [])
-
     return (
-
         <>
-            <div className={styles.reviewSection}>
+            <div className={styles.reviewSection} key={props.key}>
                 <h1 className={styles.sectionHeader} style={{ color: '#57a2ae' }}>{props.data.heading}</h1>
                 <div className={styles.reviewContent}>
                     <Carousel
                         responsive={responsive}
                         showDots={false}
+                        ssr={true}
                         arrows={false}
                         customButtonGroup={<ButtonGroup />}
                         removeArrowOnDeviceType={"mobile"}
-                        renderButtonGroupOutside>
-                        {data ? data.map((item, i) => (
+                        renderButtonGroupOutside
+                        autoPlay>
+
+                        {data.map((item, i) => (
                             <div key={i} className={styles.reviewItem}>
                                 <h1 style={{ color: '#57a2ae', fontSize: 30 }}>{item.name}</h1>
                                 <p>{item.reviewMessage}</p>
                             </div>
-                        )) : <Spinner animation="border" />}
-
+                        ))}
                     </Carousel>
                 </div>
-
                 <p onClick={() => setShowModal(true)} className={styles.blueText} style={{ fontSize: 20 }}>Klicka här för att lämna ett omdöme</p>
-
             </div>
             <ReviewModal show={showModal} onHide={() => setShowModal(false)} />
         </>

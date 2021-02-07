@@ -143,7 +143,6 @@ text-align: center;
 .reviewModal{
     width: 500px;
     height:500px;
-    background: red;
     border: 1px solid #ccc;
     transition: 1.1s ease-out;
     box-shadow:  -2rem 2rem 2rem rgba(black, 0.2);
@@ -169,12 +168,11 @@ text-align: center;
 .reviewContent {
     width: 80%;
     height: 400px;
-    display: flex;
-    align-items: center;
     position: relative;
 }
 .reviewItem {
-    width:50%
+    width:50%;
+    text-align: center;
 }
 .leftButton {
     position: absolute; 
@@ -194,11 +192,7 @@ text-align: center;
     height: 50px;
     background-color: transparent;  
 }
-.slideIcon {
-    position: absolute;
-    right:0;
-    background-color: red;
-}
+
 .textWithIllustrationSection {
     height: 1180px;
     padding-top: 150px;
@@ -219,6 +213,9 @@ text-align: center;
         height: 100%;
         align-content: space-between;
     }
+    .reviewItem {
+        width: 100%;
+    }
     .ctaImage {
         max-height:200px;
         max-width:300px;
@@ -232,5 +229,11 @@ text-align: center;
     .linkContainer {
         flex-wrap: nowrap;
         height: auto;
+    }
+    .leftButton {
+       display: none;
+    }
+    .rightButton {
+        display: none;
     }
   }

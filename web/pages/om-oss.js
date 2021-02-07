@@ -4,7 +4,7 @@ import client from '../client'
 // index.js
 const About = (props) => {
   return (
-    <div>
+    <div style={{ marginTop: 180 }}>
       <PageBuilder data={props.data.content} />
     </div>
   )

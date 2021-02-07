@@ -1,11 +1,9 @@
 .navbar {
-    display:flex;
-    background-color: #57a2ae56;
-    position: fixed;
-    width: 100%;
-    top: 0;
-    z-index: 9000;
-    justify-content: space-between;
+    background-color: #57a2aecc;
+    transition: all 0.5s ease-in-out;
+}
+.scrollingNav {
+    background-color: #57a2ae;
 }
 .navbarLink {
     display:flex;
@@ -31,4 +29,7 @@
     max-height:100px;
     padding-left:10px;
     padding-top: 10px;
+}
+.dropdown-menu a {
+    color:black
 }
