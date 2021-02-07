@@ -1,5 +1,5 @@
 import styles from './component.module.css'
-import Link from 'next/link'
+
 
 const CTA = (props) => {
     const { callToActionBlock } = props.data
@@ -12,15 +12,14 @@ const CTA = (props) => {
                         <h1 className={styles.sectionHeader} style={{ color: '#57a2ae' }}>
                             {item.linkText}
                         </h1>
-                        <Link href={item.url}>
+                        <a href={item.url}>
                             <img src={item.ctaImage.asset.url} className={styles.ctaImage} />
-                        </Link>
+                        </a>
 
                     </div>
                 )
             })}
         </div>
-
     )
 }
 export default CTA

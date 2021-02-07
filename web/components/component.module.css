@@ -100,30 +100,7 @@ text-align: center;
     text-transform: uppercase;
     text-align: center;
 }
-@media (max-width: 768px) {
-    .heroImage {
-        background-position: center;
-    }
-    .sectionHeader {
-        font-size: 25px;
-    }
-    .callToActionSection{
-        flex-direction: column;
-    }
-    .newsFeed {
-        padding:0 20px;
-        flex-direction: column;
-        height: 100%;
-        align-content: space-between;
-    }
-    .ctaImage {
-        max-height:200px;
-        max-width:300px;
-    }
-    .informationContent{
-        flex-wrap: nowrap;
-    }
-  }
+
 /* footer */
 .footer {
     padding-top: 50px;
@@ -154,6 +131,8 @@ text-align: center;
 .linkContainer {
     display:flex;
     flex-direction: column;
+    height: 250px;
+    flex-wrap: wrap;
 }
 .link {
     margin:10px 10px;
@@ -179,25 +158,23 @@ text-align: center;
     transform: translate(-50%, -50%);
 }
 .reviewSection {
-    display:flex;
     height:800px;
-    align-items: center;
+    width: 100%;
     padding-top: 90px;
+    display: flex;
     flex-direction: column;
+    align-items: center;
 }
+
 .reviewContent {
-    width: 50%;
+    width: 80%;
     height: 400px;
     margin-top: 90px;
     position: relative;
 }
-/* .reviewItem {
-    padding-top: 30px;
-    margin-right: 35px;
-} */
 .leftButton {
     position: absolute; 
-    left:-100px;
+    left:0;
     top:50%;
     border: 0; 
     width: 50px; 
@@ -206,7 +183,7 @@ text-align: center;
 }
 .rightButton {
     position: absolute; 
-    right:-100px;
+    right:0;
     top:50%;
     border: 0; 
     width: 50px; 
@@ -222,3 +199,34 @@ text-align: center;
     height: 1180px;
     padding-top: 150px;
 }
+@media (max-width: 768px) {
+    .heroImage {
+        background-position:center;
+    }
+    .sectionHeader {
+        font-size: 25px;
+    }
+    .callToActionSection{
+        flex-direction: column;
+    }
+    .newsFeed {
+        padding:0 20px;
+        flex-direction: column;
+        height: 100%;
+        align-content: space-between;
+    }
+    .ctaImage {
+        max-height:200px;
+        max-width:300px;
+    }
+    .informationSection {
+        height: auto;
+    }
+    .informationContent{
+        flex-wrap: nowrap;
+    }
+    .linkContainer {
+        flex-wrap: nowrap;
+        height: auto;
+    }
+  }

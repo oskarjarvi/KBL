@@ -8,7 +8,7 @@ import "react-multi-carousel/lib/styles.css";
 const responsive = {
     desktop: {
         breakpoint: { max: 3000, min: 1024 },
-        items: 3
+        items: 2
     },
     tablet: {
         breakpoint: { max: 1024, min: 464 },
@@ -43,6 +43,7 @@ const Reviews = (props) => {
     }, [])
 
     return (
+
         <>
             <div className={styles.reviewSection}>
                 <h1 className={styles.sectionHeader} style={{ color: '#57a2ae' }}>{props.data.heading}</h1>
@@ -55,15 +56,17 @@ const Reviews = (props) => {
                         customButtonGroup={<ButtonGroup />}
                         removeArrowOnDeviceType={["tablet", "mobile"]}
                         renderButtonGroupOutside
-                        centerMode>
+                        itemClass='test'>
                         {data.map((item, i) => (
                             <div key={i} className={styles.reviewItem}>
                                 <h1 style={{ color: '#57a2ae', fontSize: 30 }}>{item.name}</h1>
                                 <p>{item.reviewMessage}</p>
                             </div>
                         ))}
+
                     </Carousel>
                 </div>
+
                 <p onClick={() => setShowModal(true)} className={styles.blueText} style={{ fontSize: 20 }}>Klicka här för att lämna ett omdöme</p>
 
             </div>

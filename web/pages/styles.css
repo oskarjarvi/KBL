@@ -11,7 +11,7 @@ body {
   a, a:link, a:visited, a:focus, a:hover, a:active{
     color:white;
     text-decoration:none; 
-    cursor: crosshair;
+    cursor:pointer;
   }
   *, *:before, *:after {
     box-sizing: border-box;
