@@ -19,7 +19,7 @@ const NavigationBar = () => {
 
         return () => { window.removeEventListener("scroll", handleScroll) }
     }, [])
-    console.log(scrolling)
+
     return (
         <>
             <Navbar fixed="top" variant="dark" className={scrolling ? styles.scrollingNav : styles.navbar} collapseOnSelect expand="lg">
