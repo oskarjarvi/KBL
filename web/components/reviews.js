@@ -4,6 +4,7 @@ import styles from './component.module.css'
 import ReviewModal from './reviewModal'
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
+import { Spinner } from 'react-bootstrap'
 
 const responsive = {
     desktop: {
@@ -35,11 +36,14 @@ const ButtonGroup = ({ next, previous, ...rest }) => {
     );
 };
 const Reviews = (props) => {
-    const [data, setData] = useState([])
+    const [data, setData] = useState(null)
     const [showModal, setShowModal] = useState(false)
-
+    const fetchData = async () => {
+        let response = await client.fetch('*[_type == "review"]').then(res => setData(res))
+        setData(response)
+    }
     useEffect(() => {
-        client.fetch('*[_type == "review"]').then(res => setData(res))
+        fetchData()
     }, [])
 
     return (
@@ -51,18 +55,16 @@ const Reviews = (props) => {
                     <Carousel
                         responsive={responsive}
                         showDots={false}
-                        ssr
                         arrows={false}
                         customButtonGroup={<ButtonGroup />}
-                        removeArrowOnDeviceType={["tablet", "mobile"]}
-                        renderButtonGroupOutside
-                        itemClass='test'>
-                        {data.map((item, i) => (
+                        removeArrowOnDeviceType={"mobile"}
+                        renderButtonGroupOutside>
+                        {data ? data.map((item, i) => (
                             <div key={i} className={styles.reviewItem}>
                                 <h1 style={{ color: '#57a2ae', fontSize: 30 }}>{item.name}</h1>
                                 <p>{item.reviewMessage}</p>
                             </div>
-                        ))}
+                        )) : <Spinner animation="border" />}
 
                     </Carousel>
                 </div>

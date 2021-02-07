@@ -169,12 +169,16 @@ text-align: center;
 .reviewContent {
     width: 80%;
     height: 400px;
-    margin-top: 90px;
+    display: flex;
+    align-items: center;
     position: relative;
+}
+.reviewItem {
+    width:50%
 }
 .leftButton {
     position: absolute; 
-    left:0;
+    left:-100px;
     top:50%;
     border: 0; 
     width: 50px; 
@@ -183,7 +187,7 @@ text-align: center;
 }
 .rightButton {
     position: absolute; 
-    right:0;
+    right:-100px;
     top:50%;
     border: 0; 
     width: 50px; 
