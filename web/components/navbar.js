@@ -33,10 +33,9 @@ const NavigationBar = () => {
                         <Nav.Item>
                             <Link href="/om-oss"><a className="nav-link" style={{ color: 'white' }}>Om oss</a></Link>
                         </Nav.Item>
-                        <NavDropdown title="Hundar" id="basic-nav-dropdown">
-                            <NavDropdown.Item><Link href="/dogs"><a>Våra hundar</a></Link></NavDropdown.Item>
-                            <NavDropdown.Item><Link href="/om-oss"><a>Om oss</a></Link></NavDropdown.Item>
-
+                        <NavDropdown title="Hundar">
+                            <Link href="/dogs" passHref><NavDropdown.Item style={{ color: 'black' }}>Våra hundar</NavDropdown.Item></Link>
+                            <Link href="/om-oss" passHref><NavDropdown.Item>Om oss</NavDropdown.Item></Link>
                         </NavDropdown>
                         <Nav.Item>
                             <Link href="/"><a className="nav-link">Hund himmelen</a></Link>

@@ -118,6 +118,7 @@ text-align: center;
 }
 .informationSection h1{
     margin-bottom: 40px;
+    color: white;
 }
 .informationContent{
     display: grid;
@@ -137,6 +138,7 @@ text-align: center;
 }
 .link {
     font-weight: 300;
+    color:white
 }
 /*Reviews*/
 .reviewModal{
@@ -169,8 +171,7 @@ text-align: center;
     position: relative;
 }
 .reviewItem {
-    width:50%;
-    padding-left: 50px;
+    text-align: center;
 }
 .leftButton {
     position: absolute; 
