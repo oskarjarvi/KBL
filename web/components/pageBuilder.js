@@ -1,4 +1,5 @@
 import CTA from "./cta"
+import CTABlock from "./ctaBlock"
 import Gallery from "./gallery"
 import Hero from "./hero"
 import Link from "./link"
@@ -16,7 +17,7 @@ const PageBuilder = (props) => {
             case 'link':
                 return <Link data={data} />
             case 'callToActionBlock':
-                return <CTA data={data} />
+                return <CTABlock data={data} />
             case 'gallery':
                 return <Gallery data={data} />
             case 'newsFeed':
@@ -25,6 +26,8 @@ const PageBuilder = (props) => {
                 return <Reviews data={data} />
             case 'textWithIllustration':
                 return <TextWithIllustration data={data} />
+            case 'callToAction':
+                return <CTA data={data} />
             default: <> </>
         }
     }

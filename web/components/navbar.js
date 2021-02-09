@@ -23,7 +23,7 @@ const NavigationBar = () => {
     return (
         <>
             <Navbar fixed="top" variant="dark" className={scrolling ? styles.scrollingNav : styles.navbar} collapseOnSelect expand="lg">
-                <Navbar.Brand href="/"><img src='./whiteLogo.svg' alt="KBL logo" style={{ width: 100, height: 100 }} /></Navbar.Brand>
+                <Navbar.Brand href="/"><img src='/whiteLogo.svg' alt="KBL logo" style={{ width: 100, height: 60 }} /></Navbar.Brand>
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav" className="justify-content-end">
                     <Nav>
@@ -34,7 +34,7 @@ const NavigationBar = () => {
                             <Link href="/om-oss"><a className="nav-link" style={{ color: 'white' }}>Om oss</a></Link>
                         </Nav.Item>
                         <NavDropdown title="Hundar" id="basic-nav-dropdown">
-                            <NavDropdown.Item><Link href="/om-oss"><a>Om oss</a></Link></NavDropdown.Item>
+                            <NavDropdown.Item><Link href="/dogs"><a>Våra hundar</a></Link></NavDropdown.Item>
                             <NavDropdown.Item><Link href="/om-oss"><a>Om oss</a></Link></NavDropdown.Item>
 
                         </NavDropdown>

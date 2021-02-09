@@ -59,12 +59,12 @@ const Reviews = (props) => {
                         {data.map((item, i) => (
                             <div key={i} className={styles.reviewItem}>
                                 <h1 style={{ color: '#57a2ae', fontSize: 30 }}>{item.name}</h1>
-                                <p>{item.reviewMessage}</p>
+                                <p style={{ color: '#57a2ae' }}>{item.reviewMessage}</p>
                             </div>
                         ))}
                     </Carousel>
                 </div>
-                <p onClick={() => setShowModal(true)} className={styles.blueText} style={{ fontSize: 20 }}>Klicka här för att lämna ett omdöme</p>
+                <p onClick={() => setShowModal(true)} className={styles.blueText} style={{ marginTop: 30 }}>Klicka här för att lämna ett omdöme</p>
             </div>
             <ReviewModal show={showModal} onHide={() => setShowModal(false)} />
         </>
