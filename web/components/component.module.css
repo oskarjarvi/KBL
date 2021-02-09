@@ -160,10 +160,10 @@ text-align: center;
 .reviewSection {
     height:600px;
     width: 100%;
-    padding-top: 90px;
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: space-evenly;
 }
 
 .reviewContent {
