@@ -1,6 +1,6 @@
 
 import client from '../client'
-import styles from './dogs.module.css'
+import styles from '../styles/dogs.module.scss'
 import Link from 'next/link'
 
 // index.js

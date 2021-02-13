@@ -1,4 +1,4 @@
-import styles from './component.module.css'
+import styles from '../styles/newsFeed.module.scss'
 
 const NewsFeed = (props) => {
     const { newsArray } = props.data

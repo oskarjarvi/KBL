@@ -1,4 +1,4 @@
-import styles from './component.module.css'
+import styles from '../styles/cta.module.scss'
 import { Button } from 'react-bootstrap'
 
 const CTA = (props) => {
@@ -6,7 +6,7 @@ const CTA = (props) => {
 
     return (
         <div className={styles.callToAction}>
-            <p style={{ marginRight: 30, marginBottom: 0 }}>{linkText}</p>
+            <p>{linkText}</p>
             <Button href={url}>Mail</Button>
         </div>
     )

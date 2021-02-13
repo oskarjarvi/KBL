@@ -1,10 +1,7 @@
-module.exports = {
-    webpack(config) {
-        config.module.rules.push({
-            test: /\.svg$/,
-            use: ["@svgr/webpack"]
-        });
+const path = require('path')
 
-        return config;
-    }
-};
+module.exports = {
+    sassOptions: {
+        includePaths: [path.join(__dirname, 'styles')],
+    },
+}

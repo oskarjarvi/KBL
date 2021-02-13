@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import client from '../client'
-import styles from './component.module.css'
+import styles from '../styles/review.module.scss'
 import ReviewModal from './reviewModal'
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";

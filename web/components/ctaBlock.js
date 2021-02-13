@@ -1,4 +1,4 @@
-import styles from './component.module.css'
+import styles from '../styles/cta.module.scss'
 
 
 const CTABlock = (props) => {

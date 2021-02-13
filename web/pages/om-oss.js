@@ -1,10 +1,10 @@
 import PageBuilder from '../components/pageBuilder'
 import client from '../client'
-
+import styles from '../styles/about.module.scss'
 // index.js
 const About = (props) => {
   return (
-    <div style={{ marginTop: 130 }}>
+    <div className={styles.aboutPage}>
       <PageBuilder data={props.data.content} />
     </div>
   )

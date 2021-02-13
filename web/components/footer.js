@@ -1,6 +1,6 @@
 import client from '../client'
 import { useEffect, useState } from 'react'
-import styles from './component.module.css'
+import styles from '../styles/footer.module.scss'
 
 
 const Footer = () => {

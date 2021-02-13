@@ -4,8 +4,8 @@ import Gallery from "./gallery"
 import Hero from "./hero"
 import Link from "./link"
 import NewsFeed from './newsFeed'
-import Reviews from "./reviews"
 import TextWithIllustration from "./textWithIllustration"
+import Reviews from "./reviews"
 
 
 

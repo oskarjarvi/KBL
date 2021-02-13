@@ -1,9 +1,13 @@
-const Gallery = (data) => {
+import styles from '../styles/gallery.module.scss'
+const Gallery = ({ data }) => {
     return (
-        <div>CTAOOO</div>
-        // <div style={{backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(${});`}}>
+        <div className={styles.imageGridContainer}>
+            {data && data.map((item, i) => (
+                <div key={i} style={{ backgroundImage: `url(${item})` }} className={styles.galleryImage}>
 
-        // </div>
+                </div>
+            ))}
+        </div>
     )
 }
 export default Gallery

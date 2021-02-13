@@ -10,6 +10,20 @@ export default {
             type: 'string',
         },
         {
+            title: 'Regnr',
+            name: 'regnumber',
+            type: 'string',
+        },
+        {
+            name: 'slug',
+            type: 'slug',
+            title: 'Slug',
+            options: {
+                source: 'title',
+                maxLength: 96
+            }
+        },
+        {
             title: 'Hundhimmelen',
             name: 'dead',
             type: 'boolean',
