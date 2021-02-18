@@ -2,10 +2,10 @@ import PageBuilder from '../components/pageBuilder'
 import client from '../client'
 
 // index.js
-const Index = (props) => {
+const Index = ({ data }) => {
   return (
     <div>
-      <PageBuilder data={props.data.content} />
+      <PageBuilder data={data.content} />
     </div>
   )
 }
@@ -36,7 +36,8 @@ export async function getStaticProps() {
   }[0]
   `)
   return {
-    props: { data }
+    props: { data },
+    revalidate: 1,
   }
 }
 

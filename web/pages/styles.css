@@ -7,6 +7,7 @@ body {
   body h1{
     font-family: 'Source Serif Pro', serif;
     color:#57a2ae;
+    font-size: 2rem;
   }
   a, a:link, a:visited, a:focus, a:hover, a:active{
     text-decoration:none; 

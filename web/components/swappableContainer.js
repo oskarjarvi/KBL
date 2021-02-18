@@ -3,7 +3,7 @@ import styles from '../styles/swappableContainer.module.scss'
 import { Modal } from 'react-bootstrap/';
 
 const SwappableContainer = ({ data }) => {
-
+    const { lineage, healthInformation, showcaseInformation } = data;
     const [active, setActive] = useState('lineage')
     const [activeImage, setActiveImage] = useState('')
     return (
@@ -14,9 +14,9 @@ const SwappableContainer = ({ data }) => {
                     <div onClick={() => setActive('healthInformation')} className={active === 'healthInformation' ? styles.activeHeader : styles.headerItem}><h1>Veterinärdata</h1></div>
                     <div onClick={() => setActive('showcaseInformation')} className={active === 'showcaseInformation' ? styles.activeHeader : styles.headerItem}><h1>Utställning</h1></div>
                 </div>
-                <div className={styles.content}>{active === 'lineage' ? <img src={data.lineage} className={styles.imgContainer} onClick={() => setActiveImage(data.lineage)} />
-                    : active === 'healthInformation' ? <span>{data.healthInformation}</span>
-                        : active === 'showcaseInformation' ? <span>{data.showcaseInformation}</span>
+                <div className={styles.content}>{active === 'lineage' ? <img src={lineage.asset.url} className={styles.imgContainer} onClick={() => setActiveImage(lineage.asset.url)} />
+                    : active === 'healthInformation' ? <span>{healthInformation}</span>
+                        : active === 'showcaseInformation' ? <span>{showcaseInformation}</span>
                             : <></>}
                 </div>
             </div>
@@ -29,7 +29,12 @@ const SwappableContainer = ({ data }) => {
                 <Modal.Header closeButton>
                 </Modal.Header>
                 <Modal.Body>
-                    <img src={activeImage} className="img-fluid" />
+                    <div style={{
+                        display: 'flex',
+                        justifyContent: 'center'
+                    }}>
+                        <img src={activeImage} className="img-fluid" />
+                    </div>
                 </Modal.Body>
 
             </Modal >

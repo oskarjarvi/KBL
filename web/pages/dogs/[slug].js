@@ -9,7 +9,7 @@ import Gallery from '../../components/gallery'
 
 
 const Dog = () => {
-  const [data, setData] = useState([])
+  const [data, setData] = useState(null)
   const router = useRouter()
 
   useEffect(() => {
@@ -36,12 +36,12 @@ const Dog = () => {
 
   return (
     <div className={styles.dogContainer}>
-      { data && data.image &&
+      { data &&
         <>
           <div className={styles.hero} style={{ backgroundImage: `url(${data.image.asset.url})` }}></div>
           <h1 className={styles.title}>King blue lagoon {data.title}</h1>
           <p>{data.regnumber}</p>
-          <SwappableContainer data={{ lineage: data.lineage.asset.url, healthInformation: data.healthInformation, showcaseInformation: data.showcaseInformation }} />
+          <SwappableContainer data={data} />
           <Gallery data={data.imageGallery} />
         </>
       }

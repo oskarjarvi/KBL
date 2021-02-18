@@ -18,7 +18,7 @@
             height: 100%;
             h1 {
                 color:white;
-                font-size: 25px;
+                font-size: 2rem;
                 text-transform: uppercase;
                 margin:0;
             }
@@ -39,18 +39,51 @@
             }
             h1 {
 
-                font-size: 25px;
+                font-size: 2rem;
                 text-transform: uppercase;
                 margin:0;
             }
         }
+        @media (max-width: 765px) {
+            .activeHeader {
+                h1 {
+
+                    font-size: 0.7rem;
+                    text-transform: uppercase;
+                    margin:0;
+                }
+            }
+            .headerItem {
+                h1 {
+                font-size: 0.8rem;
+
+            }
+        }
+            
+          }
+          @media (min-width: 768px) and (max-width: 1024px) {
+            .activeHeader {
+                h1 {
+
+                    font-size: 1rem;
+                    text-transform: uppercase;
+                    margin:0;
+                }
+            }
+            .headerItem {
+                h1 {
+                font-size: 1rem;
+
+            }
+        }
+            
+          }
         
     }
     .content {
         background-color: #57a2ae;
         color:white;
-        min-height: 500px;
-        max-height: 500px;
+        min-height: 300px;
         padding: 10px 50px;
         font-size: 20px;
         .imgContainer{

@@ -1,66 +1,92 @@
 .footer {
     padding:2.5rem;
     display:grid;
-    grid-template-columns: repeat(auto-fit, minmax(700px,500px));
+    grid-template-columns: repeat(auto-fit,500px);
     column-gap: 50px;
     height: 300px;
     row-gap: 80px;
     justify-content: center;
     background-color: #57a2ae;
 
-}
-.informationSection {
-    display: flex;
-    flex-direction: column;
-    color:white
-}
-.informationSection h1{
-    margin-bottom: 40px;
-    color: white;
-}
-.informationContent{
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(180px, 200px));
-}
 
-.informationContent p{
-    font-weight: 300;
-}
-
-.linkContainer {
-    display: grid;
-    grid-template-rows: 50% 50%; 
-    grid-template-columns: repeat(auto-fit, minmax(30%, 33%));
-    column-gap:10px;
-
-}
-.link {
-    font-weight: 300;
-    color:white
-}
-@media (max-width: 768px)
-{
-    .informationContent{
+    .informationSection {
         display: flex;
         flex-direction: column;
+        color:white;
+
+        h1{
+            margin-bottom: 40px;
+            font-size: 2rem;
+            text-transform: uppercase;
+            color: white;
+        }
+        .informationContent{
+            display: grid;
+            grid-template-columns: repeat(auto-fill, 40%);
+            row-gap: 15px;
+            p{
+                font-weight: 300;
+            }
+        }
     }
-    .informationContent p{
-        margin-bottom:5px
+
+    .linkContainer {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, 30%);
+        grid-template-rows: repeat(auto-fill, 33%);
+        column-gap:15px;
+        row-gap: 15px;
+        height: 100px;
+
+        .link {
+            font-weight: 300;
+            color:white
+        }
     }
-    .footer {
+    @media (max-width: 767px)
+    { 
         padding: 40px 30px;
         display:flex;
         flex-direction: column;
         justify-content: center;
         background-color: #57a2ae;
         height: auto;
-    
+        .informationSection {
+            .informationContent{
+                display: flex;
+                flex-direction: column;
+                p{
+                    margin-bottom:5px
+                }
+            }
+        }
+        
+ 
+        .linkContainer {
+            display: flex;
+            flex-direction: column;
+            height: auto;
+            .link {
+                margin-bottom: 5px;
+            }
+        }
+        
     }
-    .linkContainer {
-        display: flex;
-        flex-direction: column;
-    }
-    .link {
-        margin-bottom: 5px;
+    @media (min-width: 768px) and (max-width: 1030px)
+    {   
+        height:350px;
+        grid-template-columns: repeat(auto-fit,50%);
+        column-gap: 0;
+        .informationSection {
+            .informationContent{
+                column-gap: 10px;
+            }
+        }
+
+        .linkContainer {
+            grid-template-columns: repeat(auto-fill, 50%);
+            column-gap: 0;
+            row-gap: 20px;
+        }
     }
 }

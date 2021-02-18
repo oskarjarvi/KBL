@@ -51,11 +51,11 @@ const Reviews = (props) => {
                         showDots={false}
                         ssr={true}
                         arrows={false}
+                        swipeable={true}
                         customButtonGroup={<ButtonGroup />}
                         removeArrowOnDeviceType={"mobile"}
                         renderButtonGroupOutside
-                        autoPlay>
-
+                    >
                         {data.map((item, i) => (
                             <div key={i} className={styles.reviewItem}>
                                 <h1 style={{ color: '#57a2ae', fontSize: 30 }}>{item.name}</h1>

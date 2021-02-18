@@ -7,10 +7,10 @@ import Link from 'next/link'
 const Dogs = (props) => {
     const { data = [] } = props
     return (
-        <div style={{ marginTop: 130 }}>
-            <h1 className={styles.ourDogTitle}>Våra hundar</h1>
-            <div className={styles.gridContainer}>
+        <div style={{ marginTop: 200 }}>
 
+            <div className={styles.gridContainer}>
+                <h1 className={styles.ourDogTitle}>Våra hundar</h1>
 
                 {data.map((item, i) => (
                     <Link href={{
