@@ -35,7 +35,7 @@ const Previous = () => {
         <div className={styles.wrapper}>
 
             <div className={styles.container}>
-                <h1 style={{ textTransform: 'uppercase', marginBottom: 50, fontSize: '2rem' }}>Planer {data.dateOfBirth.slice(0, 4)}</h1>
+                <h1 style={{ textTransform: 'uppercase', marginBottom: 50, fontSize: '2rem' }}>Planer {data && data.dateOfBirth && data.dateOfBirth.slice(0, 4)}</h1>
                 {data &&
                     <>
                         <div className={styles.hero}>
