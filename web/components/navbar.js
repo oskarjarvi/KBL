@@ -43,7 +43,7 @@ const NavigationBar = () => {
     return (
         <>
             <Navbar sticky="top" variant="dark" className={scrolling ? styles.scrollingNav : styles.navbar} collapseOnSelect expand="lg">
-                <Navbar.Brand href="/"><img src='/whiteLogo.svg' alt="KBL logo" style={{ width: 100, height: 60 }} /></Navbar.Brand>
+                <Navbar.Brand href="/"><img src='/whiteLogo.svg' alt="KBL logo" style={{ width: 250, height: 60 }} /></Navbar.Brand>
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav" className="justify-content-end">
 

@@ -21,14 +21,14 @@ const Previous = (props) => {
                 <h1 className={styles.ourDogTitle}>Tidigare kullar</h1>
                 {filteredData && filteredData.map((item, i) => (
                     <Link href={{
-                        pathname: "/dogs/[slug]",
+                        pathname: "/previous/[previous]",
                         query: { slug: item.slug.current }
-                    }} as={`/dogs/${item.slug.current}`}
+                    }} as={`/previous/${item.slug.current}`}
                         key={i}>
                         <div key={i} className={styles.dogTile}>
                             <div style={{ backgroundImage: `url(${item.image.asset.url})` }} className={styles.dogoImage}>
                                 <h1 className={styles.dogoTitle}>
-                                    {item.title}
+                                    {item.title + ' ' + item.dateOfBirth}
                                 </h1>
                             </div>
                         </div>
@@ -46,7 +46,8 @@ export async function getStaticProps() {
         image{asset->{url}},
         title,
         slug,
-        status
+        status,
+        dateOfBirth
     }
     `)
     return {

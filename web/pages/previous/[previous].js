@@ -35,19 +35,19 @@ const Previous = () => {
         <div className={styles.wrapper}>
 
             <div className={styles.container}>
-                <h1 style={{ textTransform: 'uppercase', marginBottom: 50, fontSize: '2rem' }}>Planer {data && data.dateOfBirth && data.dateOfBirth.slice(0, 4)}</h1>
+                <h1 className={styles.plannedTitle}>Planer {data && data.dateOfBirth && data.dateOfBirth.slice(0, 4)}</h1>
                 {data &&
                     <>
                         <div className={styles.hero}>
                             <div>
                                 <img src={data.imageOfMum.asset.url} className={styles.headerImage} />
-                                <h1 style={{ textTransform: 'uppercase' }}>
+                                <h1 className={styles.heroTitle}>
                                     {data.mum}
                                 </h1>
                             </div>
                             <div>
                                 <img src={data.imageOfDad.asset.url} className={styles.headerImage} />
-                                <h1 style={{ textTransform: 'uppercase' }}>
+                                <h1 className={styles.heroTitle}>
                                     {data.dad}
                                 </h1>
                             </div>
