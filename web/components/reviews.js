@@ -44,7 +44,7 @@ const Reviews = (props) => {
     return (
         <>
             <div className={styles.reviewSection} key={props.key}>
-                <h1 className={styles.sectionHeader} style={{ color: '#57a2ae' }}>{props.data.heading}</h1>
+                <h1 className={styles.sectionHeader}>{props.data.heading}</h1>
                 <div className={styles.reviewContent}>
                     <Carousel
                         responsive={responsive}
@@ -58,8 +58,8 @@ const Reviews = (props) => {
                     >
                         {data.map((item, i) => (
                             <div key={i} className={styles.reviewItem}>
-                                <h1 style={{ color: '#57a2ae', fontSize: 30 }}>{item.name}</h1>
-                                <p style={{ color: '#57a2ae' }}>{item.reviewMessage}</p>
+                                <h1>{item.name}</h1>
+                                <p>{item.reviewMessage}</p>
                             </div>
                         ))}
                     </Carousel>

@@ -1,12 +1,14 @@
+@use './variables';
+
 .footer {
     padding:2.5rem;
     display:grid;
     grid-template-columns: repeat(auto-fit,500px);
     column-gap: 50px;
-    height: 300px;
+    height: 280px;
     row-gap: 80px;
     justify-content: center;
-    background-color: #57a2ae;
+    background-color: variables.$blue-colour;
 
 
     .informationSection {
@@ -15,8 +17,8 @@
         color:white;
 
         h1{
-            margin-bottom: 40px;
-            font-size: 2rem;
+            margin-bottom: 20px;
+            font-size: 1.8rem;
             text-transform: uppercase;
             color: white;
         }
@@ -26,6 +28,7 @@
             row-gap: 15px;
             p{
                 font-weight: 300;
+                color:white;
             }
         }
     }
@@ -49,7 +52,6 @@
         display:flex;
         flex-direction: column;
         justify-content: center;
-        background-color: #57a2ae;
         height: auto;
         .informationSection {
             .informationContent{

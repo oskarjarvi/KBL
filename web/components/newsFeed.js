@@ -8,7 +8,7 @@ const NewsFeed = (props) => {
             <div className={styles.newsFeed}>
                 {newsArray.map((item, i) => (
                     <div key={i} className={styles.newsItem}>
-                        <h1 style={{ color: '#57a2ae' }}>{item.title}</h1>
+                        <h1>{item.title}</h1>
                         <p>{item.postText}</p>
                     </div>
                 ))}

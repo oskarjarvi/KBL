@@ -1,3 +1,5 @@
+@use './variables';
+
 .textWithIllustrationSection {
     min-height: 980px;
     padding:0 50px;
@@ -22,7 +24,14 @@
             .textContainer {
                 text-transform: uppercase;
                 position: absolute;
-                top:-70px
+                top:-70px;
+                h1 {
+                    color:variables.$blue-colour
+                }
+                p {
+                color:variables.$blue-colour
+
+                }
             }
             .illustration {
                 max-width: 700px;

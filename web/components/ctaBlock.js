@@ -9,7 +9,7 @@ const CTABlock = (props) => {
             {callToActionBlock.map((item, i) => {
                 return (
                     <div key={i} className={styles.callToActionBlock}>
-                        <h1 className={styles.sectionHeader} style={{ color: '#57a2ae' }}>
+                        <h1 className={styles.sectionHeader}>
                             {item.linkText}
                         </h1>
                         <a href={item.url}>

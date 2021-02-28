@@ -1,11 +1,9 @@
+@use './variables';
+
 .navbar {
-    background-color: #57a2aecc;
+    background-color: variables.$blue-colour;
     transition: all 0.5s ease-in-out;
 }
 .scrollingNav {
-    background-color: #57a2ae;
-}
-.dropdown-item {
-    
-    color:black
+    background-color: variables.$blue-colour;
 }

@@ -2,7 +2,7 @@ import { useState } from "react"
 import styles from '../styles/swappableContainer.module.scss'
 import { Modal } from 'react-bootstrap/';
 
-const SwappableContainer = ({ data }) => {
+const SwappableDogInformationContainer = ({ data }) => {
     const { lineage, healthInformation, showcaseInformation } = data;
     const [active, setActive] = useState('lineage')
     const [activeImage, setActiveImage] = useState('')
@@ -41,4 +41,4 @@ const SwappableContainer = ({ data }) => {
         </>
     )
 }
-export default SwappableContainer
+export default SwappableDogInformationContainer

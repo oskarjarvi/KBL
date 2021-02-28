@@ -9,7 +9,7 @@ const TextWithIllustration = (props) => {
                 <div className={styles.column}>
                     <div className={styles.textContainer}>
                         <p>{props.data.heading}</p>
-                        <h1 style={{ color: '#57a2ae' }}>{props.data.tagline}</h1>
+                        <h1>{props.data.tagline}</h1>
                     </div>
                     <img src={hero.url} className={styles.illustration} />
                 </div>

@@ -4,7 +4,6 @@ const Gallery = ({ data }) => {
         <div className={styles.imageGridContainer}>
             {data && data.map((item, i) => (
                 <div key={i} style={{ backgroundImage: `url(${item})` }} className={styles.galleryImage}>
-
                 </div>
             ))}
         </div>

@@ -16,10 +16,10 @@ const Footer = () => {
         <div className={styles.footer}>
             <div className={styles.informationSection}>
                 <h1>Kontakt</h1>
-                <div className={styles.informationContent}>
+                <div className={styles.informationContent} >
                     <p>Pia Mårtensson</p>
                     {data && <>
-                        <p>{data.adress}</p>
+                        <p >{data.adress}</p>
                         <p>Mobil:+{data.tel}</p>
                         <p>Email:{data.email}</p>
                     </>}

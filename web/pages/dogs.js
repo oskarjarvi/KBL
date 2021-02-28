@@ -7,28 +7,24 @@ import Link from 'next/link'
 const Dogs = (props) => {
     const { data = [] } = props
     return (
-        <div style={{ marginTop: 200 }}>
-
-            <div className={styles.gridContainer}>
-                <h1 className={styles.ourDogTitle}>Våra hundar</h1>
-
-                {data.map((item, i) => (
-                    <Link href={{
-                        pathname: "/dogs/[slug]",
-                        query: { slug: item.slug.current }
-                    }} as={`/dogs/${item.slug.current}`}
-                        key={i}>
-                        <div key={i} className={styles.dogTile}>
-                            <div style={{ backgroundImage: `url(${item.image.asset.url})` }} className={styles.dogoImage}>
-                                <h1 className={styles.dogoTitle}>
-                                    {item.title}
-                                </h1>
-                            </div>
+        <div className={styles.gridContainer}>
+            <h1 className={styles.ourDogTitle}>Våra hundar</h1>
+            {data.map((item, i) => (
+                <Link href={{
+                    pathname: "/dogs/[slug]",
+                    query: { slug: item.slug.current }
+                }} as={`/dogs/${item.slug.current}`}
+                    key={i}>
+                    <div key={i} className={styles.dogTile}>
+                        <div style={{ backgroundImage: `url(${item.image.asset.url})` }} className={styles.dogoImage}>
+                            <h1 className={styles.dogoTitle}>
+                                {item.title}
+                            </h1>
                         </div>
-                    </Link>
-                )
-                )}
-            </div>
+                    </div>
+                </Link>
+            )
+            )}
         </div>
     )
 }

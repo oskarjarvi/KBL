@@ -9,6 +9,9 @@ body {
     color:#57a2ae;
     font-size: 2rem;
   }
+  body p{
+    color: black;
+  }
   a, a:link, a:visited, a:focus, a:hover, a:active{
     text-decoration:none; 
     cursor:pointer;

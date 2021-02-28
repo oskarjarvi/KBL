@@ -35,23 +35,8 @@ export default () =>
                             // Add a second list item
                             S.listItem()
                                 .title('Kullar')
-                                .child(S.list()
-                                    .title('Kullar')
-                                    .items([
-                                        S.listItem()
-                                            .title('Tidigare kullar')
-                                            .schemaType('previousLitter')
-                                            .child(S.documentTypeList('previousLitter').title('Tidigare kullar')),
-                                        S.listItem()
-                                            .title('Planerade kullar')
-                                            .schemaType('plannedLitter')
-                                            .child(S.documentTypeList('plannedLitter').title('Planerade kullar'))
-                                    ])),
-                            S.listItem()
-                                .title('Valpar')
                                 .schemaType('litter')
-                                .child(S.documentTypeList('litter').title('Valpar'))
-
+                                .child(S.documentTypeList('litter').title('Kullar'))
                         ])
                 ),
             S.listItem()

@@ -1,3 +1,5 @@
+@use './variables';
+
 .newsSection {
     padding: 50px 0;
     display:flex;
@@ -5,10 +7,10 @@
     min-height: 600px;
     align-items: center;
     width:100%;
-    background-color:#57a2ae;
+    background-color: variables.$blue-colour;
     color:white;
     .sectionHeader {
-        font-size: 45px;
+        font-size: 2.3rem;
         margin-bottom: 40px;
         text-transform: uppercase;
         text-align: center;
@@ -23,9 +25,9 @@
             padding: 30px;
             box-sizing: border-box;
             box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-            color: #57a2ae;
             height:300px;
             h1{
+                color: variables.$blue-colour;
                 font-size: 25px;
                 text-transform: uppercase;
             }
