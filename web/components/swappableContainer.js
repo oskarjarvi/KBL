@@ -2,23 +2,33 @@ import { useState } from "react"
 import styles from '../styles/swappableContainer.module.scss'
 import { Modal } from 'react-bootstrap/';
 
-const SwappableDogInformationContainer = ({ data }) => {
-    const { lineage, healthInformation, showcaseInformation } = data;
-    const [active, setActive] = useState('lineage')
+const SwappableDogInformationContainer = (props) => {
+    const [active, setActive] = useState(props.columns[0].name)
     const [activeImage, setActiveImage] = useState('')
+
     return (
         <>
             <div className={styles.container}>
                 <div className={styles.header}>
-                    <div onClick={() => setActive('lineage')} className={active === 'lineage' ? styles.activeHeader : styles.headerItem}><h1>Stamtavla</h1></div>
-                    <div onClick={() => setActive('healthInformation')} className={active === 'healthInformation' ? styles.activeHeader : styles.headerItem}><h1>Veterinärdata</h1></div>
-                    <div onClick={() => setActive('showcaseInformation')} className={active === 'showcaseInformation' ? styles.activeHeader : styles.headerItem}><h1>Utställning</h1></div>
+                    {props.columns && props.columns.map((item, i) =>
+                        <div key={i} onClick={() => setActive(item.name)} className={active === item.name ? styles.activeHeader : styles.headerItem}>
+                            <h1>{item.name}</h1>
+                        </div>)}
                 </div>
-                <div className={styles.content}>{active === 'lineage' ? <img src={lineage.asset.url} className={styles.imgContainer} onClick={() => setActiveImage(lineage.asset.url)} />
-                    : active === 'healthInformation' ? <span>{healthInformation}</span>
-                        : active === 'showcaseInformation' ? <span>{showcaseInformation}</span>
-                            : <></>}
+                <div className={styles.content}>
+                    {props.columns && props.columns.map((item, i) => {
+                        const { data } = item;
+                        if (active === item.name) {
+                            return item.type === 'img' ? <img key={i} src={data.url} className={styles.imgContainer} onClick={() => setActiveImage(data.url)} />
+                                : item.type === 'imgNtext' ? <span>{data.content} <img src={data.url} className={styles.imgContainer} /></span> :
+                                    <span key={i}>{data.content}</span>
+                        }
+
+                    })
+                    }
+
                 </div>
+
             </div>
             <Modal
                 size="xl"

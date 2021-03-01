@@ -39,6 +39,11 @@ export default {
             }
         },
         {
+            title: 'Inavelsgrad',
+            name: 'inbredPercentage',
+            type: 'string',
+        },
+        {
             title: 'Beskrivning',
             name: 'description',
             type: 'text',

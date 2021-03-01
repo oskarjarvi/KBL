@@ -1,0 +1,63 @@
+@use './variables';
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .heroimg {
+        width: 100%;
+        height: 600px;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    .heroTitles {
+        display: flex;
+        justify-content: space-between;
+        margin: 30px 20px;
+        h1 {
+            color:variables.$blue-colour;
+            text-transform: uppercase;
+        }
+    }
+    .container {
+        width: 80%;
+        .descriptionContainer {
+            margin-bottom: 30px;
+        }
+        .plannedTitle {
+            color: variables.$blue-colour;
+            text-transform: uppercase;
+            margin-bottom: 30px;
+        }
+        .parentContainer {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            margin-bottom: 50px;
+            .parentTitle {
+                color: variables.$blue-colour;
+                text-transform: uppercase;
+            }
+            .parentImage {
+                width:100%;
+                max-width:730px;
+                height: 500px;
+                object-fit: cover;
+                margin-bottom: 15px;
+            }
+        }
+
+    }
+    @media (min-width: 768px) and (max-width: 1450px) {
+        .container {
+            .parentContainer {
+                .parentImage 
+                {
+                    max-width: 550px;
+                    height:400px;
+                }
+            }
+        }
+      }
+    
+}

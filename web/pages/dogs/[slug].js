@@ -41,7 +41,12 @@ const Dog = () => {
           <div className={styles.hero} style={{ backgroundImage: `url(${data.image.asset.url})` }}></div>
           <h1 className={styles.title}>King blue lagoon {data.title}</h1>
           <p>{data.regnumber}</p>
-          <SwappableContainer data={data} />
+          <SwappableContainer
+            columns={[
+              { name: 'Stamtavla', type: 'img', data: { url: data.lineage.asset.url } },
+              { name: 'Hälsoinformation', data: { content: data.healthInformation } },
+              { name: 'Utställning', data: { content: data.showcaseInformation } }]}
+          />
           <Gallery data={data.imageGallery} />
         </>
       }

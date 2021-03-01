@@ -5,7 +5,7 @@ import { useRouter } from 'next/router'
 import client from '../../client'
 import styles from '../../styles/planned.module.scss'
 import Gallery from '../../components/gallery'
-import SwappableLitterContainer from '../../components/swappableLitterContainer'
+import SwappableContainer from '../../components/swappableContainer'
 
 
 const Planned = () => {
@@ -18,6 +18,8 @@ const Planned = () => {
             let query = groq`*[_type == "litter" && slug.current == "${router.query.slug}"][0]{
         title, dateOfBirth, description, mum,
         imageOfMum{asset->{url}},
+        mumLineage{asset->{url}},
+        dadLineage{asset->{url}},
         descriptionOfMum, dad,
         imageOfDad{asset->{url}},
         descriptionOfDad,
@@ -33,7 +35,6 @@ const Planned = () => {
 
     return (
         <div className={styles.wrapper}>
-
             <div className={styles.container}>
                 <h1 className={styles.plannedTitle}>Planer {data && data.dateOfBirth && data.dateOfBirth.slice(0, 4)}</h1>
                 {data &&
@@ -53,7 +54,12 @@ const Planned = () => {
                             </div>
                         </div>
                         <p>{data.regnumber}</p>
-                        <SwappableLitterContainer data={data} />
+                        <SwappableContainer
+                            columns={[
+                                { name: 'Information', data: { content: data.description } },
+                                { name: data.mum, type: 'imgNtext', data: { url: data.mumLineage.asset.url, content: data.descriptionOfMum } },
+                                { name: data.dad, type: 'imgNtext', data: { url: data.dadLineage.asset.url, content: data.descriptionOfDad } }]}
+                        />
                     </>
                 }
             </div>

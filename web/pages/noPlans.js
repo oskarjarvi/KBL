@@ -1,11 +1,9 @@
 import CTA from "../components/cta"
+import styles from '../styles/noPlans.module.scss'
 
-const NoPlans = (props) => {
+const NoPlans = () => {
     return (
-        <div style={{
-            padding: 50,
-            height: 450
-        }}>
+        <div className={styles.container}>
             <h1>
                 Planer
             </h1>

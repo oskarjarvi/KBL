@@ -2,7 +2,6 @@
 
 .container {
     width: 100%;
-    max-width: 1200px;
     display: flex;
     flex-direction: column;
     margin-bottom: 50px;
@@ -13,7 +12,7 @@
         .activeHeader {
             background-color: variables.$blue-colour;
             color: white;
-            width: 33%;
+            flex: 1 0 33%;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -34,7 +33,7 @@
             color:variables.$blue-colour;
             align-items: center;
             justify-content: center;
-            width: 35%;
+            flex: 1 0 33%;
             height: 100%;
             &:first-child
             {
