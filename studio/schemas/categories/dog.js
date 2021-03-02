@@ -24,21 +24,29 @@ export default {
             }
         },
         {
+            title: 'Född',
+            name: 'dateOfBirth',
+            type: 'date'
+        },
+
+        {
             title: 'Hundhimmelen',
             name: 'dead',
             type: 'boolean',
         },
         {
+            title: 'Avlidit',
+            name: 'dateOfDeath',
+            type: 'date',
+            description: 'Om hundhimmelen är på, fyll i värde här annars ignorera det.'
+        },
+
+        {
             title: 'Bild',
             name: 'image',
             type: 'image',
         },
-        {
-            title: 'Född',
-            name: 'dateOfBirth',
-            type: 'date'
 
-        },
         {
             title: 'Stamtavla',
             name: 'lineage',

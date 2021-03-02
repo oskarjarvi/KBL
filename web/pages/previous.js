@@ -13,7 +13,7 @@ const Previous = (props) => {
             setFilteredData(data.filter(item => item.status === 'previous'))
         }
     }, [data])
-    console.log(filteredData)
+
     return (
         <div>
 
