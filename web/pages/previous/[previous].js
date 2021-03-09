@@ -36,7 +36,7 @@ const Previous = () => {
     return (
 
         <div className={styles.wrapper}>
-            <div style={{ backgroundImage: `url(${data && data.image.asset.url})` }} className={styles.heroimg}></div>
+            <img className={styles.hero} src={data.image.asset.url} />
             <div className={sharedStyles.wrapper}>
                 <div className={sharedStyles.container}>
                     <div className={styles.container}>
@@ -51,13 +51,13 @@ const Previous = () => {
                                     {data.description}
                                 </div>
                                 <div className={styles.parentContainer}>
-                                    <div>
+                                    <div className={styles.parent}>
                                         <img src={data.imageOfMum.asset.url} className={styles.parentImage} />
                                         <h1 className={styles.parentTitle}>
                                             {data.mum}
                                         </h1>
                                     </div>
-                                    <div>
+                                    <div className={styles.parent}>
                                         <img src={data.imageOfDad.asset.url} className={styles.parentImage} />
                                         <h1 className={styles.parentTitle}>
                                             {data.dad}

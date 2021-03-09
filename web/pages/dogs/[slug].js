@@ -40,7 +40,7 @@ const Dog = () => {
     <div className={styles.dogContainer}>
       {data &&
         <>
-          <div className={styles.hero} style={{ backgroundImage: `url(${data.image.asset.url})` }}></div>
+          <img className={styles.hero} src={data.image.asset.url} />
           <h1 className={styles.title}>King blue lagoon {data.title}</h1>
           <p>{data.regnumber}</p>
           <div className={sharedStyles.wrapper}>

@@ -4,15 +4,15 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    .heroimg {
-        width: 100%;
-        height: 600px;
+    .hero {
+        width:100vw;
+        height:75vh;
         background-repeat: no-repeat;
         background-size: cover;
     }
     .heroTitles {
         display: flex;
-        justify-content: space-between;
+        justify-content: space-evenly;
         margin: 30px 20px;
         h1 {
             color:variables.$blue-colour;
@@ -20,7 +20,7 @@
         }
     }
     .container {
-        width: 80%;
+
         .descriptionContainer {
             margin-bottom: 30px;
         }
@@ -33,31 +33,49 @@
             display: flex;
             justify-content: space-between;
             width: 100%;
-            margin-bottom: 50px;
-            .parentTitle {
-                color: variables.$blue-colour;
-                text-transform: uppercase;
+            .parent {
+                width: 49%;
+                margin-bottom: 30px;
+
+                .parentTitle {
+                    color: variables.$blue-colour;
+                    text-transform: uppercase;
+                }
+                .parentImage {
+                    width:100%;
+                    max-width:730px;
+                    height: 500px;
+                    object-fit: cover;
+                    margin-bottom: 15px;
+                }
             }
-            .parentImage {
-                width:100%;
-                max-width:730px;
-                height: 500px;
-                object-fit: cover;
-                margin-bottom: 15px;
-            }
+            
         }
 
     }
-    @media (min-width: 768px) and (max-width: 1450px) {
+    @media (max-width: 1023px) {
+        .heroTitles {
+            h1 {
+                font-size: 1.3rem;
+            }
+            
+        }
         .container {
             .parentContainer {
-                .parentImage 
-                {
-                    max-width: 550px;
-                    height:400px;
+                flex-direction: column;
+                align-items: center;
+                margin-bottom: 30px;
+                .parent {
+                    .parentImage 
+                    {
+                        max-width: 550px;
+                        height:400px;
+                    }
                 }
+                
             }
         }
       }
+
     
 }

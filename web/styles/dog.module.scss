@@ -6,11 +6,10 @@
     flex-direction: column;
     align-items: center;
     .hero{
-        width:100%;
+        width:100vw;
         height:50vh;
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
+        object-position: center;
+        object-fit: cover;
         margin-bottom: 20px;
     }
     .title{

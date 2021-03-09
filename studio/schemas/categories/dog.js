@@ -35,6 +35,11 @@ export default {
             type: 'boolean',
         },
         {
+            title: 'Foderhund',
+            name: 'foder',
+            type: 'boolean',
+        },
+        {
             title: 'Avlidit',
             name: 'dateOfDeath',
             type: 'date',
