@@ -1,12 +1,10 @@
 import groq from 'groq'
 import { useEffect, useState } from 'react'
 import { useRouter } from 'next/router'
-
 import client from '../../client'
-import styles from '../../styles/planned.module.scss'
-import Gallery from '../../components/gallery'
 import SwappableContainer from '../../components/swappableContainer'
-import sharedStyles from '../../styles/shared.module.scss';
+import styles from '../../styles/planned.module.scss'
+
 
 
 const Planned = () => {
@@ -41,7 +39,6 @@ const Planned = () => {
                 <h1 className={styles.plannedTitle}>Planer {data && data.dateOfBirth && data.dateOfBirth.slice(0, 4)}</h1>
                 {data &&
                     <>
-
                         <div className={styles.hero}>
                             <div className={styles.heroSection}>
                                 <img src={data.imageOfMum.asset.url} className={styles.headerImage} />
