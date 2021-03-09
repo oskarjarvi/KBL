@@ -70,9 +70,9 @@ const NavigationBar = () => {
                                         {
                                             plannedData && plannedData.map((link, i) =>
                                                 <Link href={{
-                                                    pathname: "/planned/[planned]",
+                                                    pathname: "/[planned]",
                                                     query: { slug: link.slug.current }
-                                                }} key={i} as={`/planned/${link.slug.current}`} passHref><Dropdown.Item>{link.title}</Dropdown.Item></Link>)
+                                                }} key={i} as={`/${link.slug.current}`} passHref><Dropdown.Item>{link.title}</Dropdown.Item></Link>)
                                         }
                                     </Dropdown.Menu>
                                 </Dropdown>
@@ -89,7 +89,7 @@ const NavigationBar = () => {
                                                 <Link href={{
                                                     pathname: "/puppies/[puppies]",
                                                     query: { slug: link.slug.current }
-                                                }} key={i} as={`/planned/${link.slug.current}`} passHref><Dropdown.Item>{link.title}</Dropdown.Item></Link>)
+                                                }} key={i} as={`/${link.slug.current}`} passHref><Dropdown.Item>{link.title}</Dropdown.Item></Link>)
                                         }
                                     </Dropdown.Menu>
                                 </Dropdown>

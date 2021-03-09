@@ -31,7 +31,7 @@ const Dogs = (props) => {
 export async function getStaticProps() {
 
     let data = await client.fetch(`
-    *[_type == "dog"] {
+    *[_type == "dog" && foder != true && dead != true] {
         image{asset->{url}},
         title,
         slug
