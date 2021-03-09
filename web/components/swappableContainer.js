@@ -20,7 +20,8 @@ const SwappableDogInformationContainer = (props) => {
                         const { data } = item;
                         if (active === item.name) {
                             return item.type === 'img' ? <img key={i} src={data.url} className={styles.imgContainer} onClick={() => setActiveImage(data.url)} />
-                                : item.type === 'imgNtext' ? <span>{data.content} <img src={data.url} className={styles.imgContainer} /></span> :
+                                : item.type === 'imgNtext' ? <span><p>{data.content}
+                                </p> <img src={data.url} className={styles.imgContainer} onClick={() => setActiveImage(data.url)} /></span> :
                                     <span key={i}>{data.content}</span>
                         }
 

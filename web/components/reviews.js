@@ -4,6 +4,7 @@ import styles from '../styles/review.module.scss'
 import ReviewModal from './reviewModal'
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
+import sharedStyles from '../styles/shared.module.scss';
 
 const responsive = {
     desktop: {
@@ -43,28 +44,32 @@ const Reviews = (props) => {
     }, [])
     return (
         <>
-            <div className={styles.reviewSection} key={props.key}>
-                <h1 className={styles.sectionHeader}>{props.data.heading}</h1>
-                <div className={styles.reviewContent}>
-                    <Carousel
-                        responsive={responsive}
-                        showDots={false}
-                        ssr={true}
-                        arrows={false}
-                        swipeable={true}
-                        customButtonGroup={<ButtonGroup />}
-                        removeArrowOnDeviceType={"mobile"}
-                        renderButtonGroupOutside
-                    >
-                        {data.map((item, i) => (
-                            <div key={i} className={styles.reviewItem}>
-                                <h1>{item.name}</h1>
-                                <p>{item.reviewMessage}</p>
-                            </div>
-                        ))}
-                    </Carousel>
+            <div className={sharedStyles.wrapper}>
+                <div className={sharedStyles.container}>
+                    <div className={styles.reviewSection} key={props.key}>
+                        <h1 className={styles.sectionHeader}>{props.data.heading}</h1>
+                        <div className={styles.reviewContent}>
+                            <Carousel
+                                responsive={responsive}
+                                showDots={false}
+                                ssr={true}
+                                arrows={false}
+                                swipeable={true}
+                                customButtonGroup={<ButtonGroup />}
+                                removeArrowOnDeviceType={"mobile"}
+                                renderButtonGroupOutside
+                            >
+                                {data.map((item, i) => (
+                                    <div key={i} className={styles.reviewItem}>
+                                        <h1>{item.name}</h1>
+                                        <p>{item.reviewMessage}</p>
+                                    </div>
+                                ))}
+                            </Carousel>
+                        </div>
+                        <p onClick={() => setShowModal(true)} className={styles.blueText} style={{ marginTop: 30 }}>Klicka här för att lämna ett omdöme</p>
+                    </div>
                 </div>
-                <p onClick={() => setShowModal(true)} className={styles.blueText} style={{ marginTop: 30 }}>Klicka här för att lämna ett omdöme</p>
             </div>
             <ReviewModal show={showModal} onHide={() => setShowModal(false)} />
         </>

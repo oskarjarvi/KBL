@@ -1,4 +1,18 @@
 .container{
-    padding:100px;
-    height:730px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 50px;
+    height: 60vh;
+    @media (max-width: 760px)
+    {
+        p{
+            text-align: center;
+        }
+    }
+    @media (min-width: 1024px)
+    {
+        height: 80vh;
+    }
 }

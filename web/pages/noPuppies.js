@@ -1,5 +1,5 @@
 import styles from '../styles/noPlans.module.scss'
-const NoPuppies = (props) => {
+const NoPuppies = () => {
     return (
         <div className={styles.container}>
             <h1>

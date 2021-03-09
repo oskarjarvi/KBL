@@ -6,6 +6,7 @@ import client from '../../client'
 import styles from '../../styles/dog.module.scss'
 import SwappableContainer from '../../components/swappableContainer'
 import Gallery from '../../components/gallery'
+import sharedStyles from '../../styles/shared.module.scss';
 
 
 const Dog = () => {
@@ -35,22 +36,28 @@ const Dog = () => {
 
 
   return (
+
     <div className={styles.dogContainer}>
-      { data &&
+      {data &&
         <>
           <div className={styles.hero} style={{ backgroundImage: `url(${data.image.asset.url})` }}></div>
           <h1 className={styles.title}>King blue lagoon {data.title}</h1>
           <p>{data.regnumber}</p>
-          <SwappableContainer
-            columns={[
-              { name: 'Stamtavla', type: 'img', data: { url: data.lineage.asset.url } },
-              { name: 'Hälsoinformation', data: { content: data.healthInformation } },
-              { name: 'Utställning', data: { content: data.showcaseInformation } }]}
-          />
-          <Gallery data={data.imageGallery} />
+          <div className={sharedStyles.wrapper}>
+            <div className={sharedStyles.container}>
+              <SwappableContainer
+                columns={[
+                  { name: 'Stamtavla', type: 'img', data: { url: data.lineage.asset.url } },
+                  { name: 'Hälsoinformation', data: { content: data.healthInformation } },
+                  { name: 'Utställning', data: { content: data.showcaseInformation } }]}
+              />
+              <Gallery data={data.imageGallery} />
+            </div>
+          </div>
         </>
       }
     </div>
+
   )
 }
 

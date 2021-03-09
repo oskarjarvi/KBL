@@ -1,6 +1,7 @@
 import client from '../client'
 import { useEffect, useState } from 'react'
 import styles from '../styles/footer.module.scss'
+import sharedStyles from '../styles/shared.module.scss';
 
 
 const Footer = () => {
@@ -14,28 +15,30 @@ const Footer = () => {
     }, [])
     return (
         <div className={styles.footer}>
-            <div className={styles.informationSection}>
-                <h1>Kontakt</h1>
-                <div className={styles.informationContent} >
-                    <p>Pia Mårtensson</p>
-                    {data && <>
-                        <p >{data.adress}</p>
-                        <p>Mobil:+{data.tel}</p>
-                        <p>Email:{data.email}</p>
-                    </>}
+
+            <div className={styles.container}>
+                <div className={styles.informationSection}>
+                    <h1>Kontakt</h1>
+                    <div className={styles.informationContent} >
+                        <p>Pia Mårtensson</p>
+                        {data && <>
+                            <p >{data.adress}</p>
+                            <p>Mobil:+{data.tel}</p>
+                            <p>Email:{data.email}</p>
+                        </>}
+                    </div>
+                </div>
+                <div className={styles.informationSection}>
+                    <h1>Länkar</h1>
+                    <div className={styles.linkContainer}>
+                        {data && data.links.map((link, i) => {
+                            return (
+                                <a key={i} href={link.href} className={styles.link}>{link.title}</a>
+                            )
+                        })}
+                    </div>
                 </div>
 
-
-            </div>
-            <div className={styles.informationSection}>
-                <h1>Länkar</h1>
-                <div className={styles.linkContainer}>
-                    {data && data.links.map((link, i) => {
-                        return (
-                            <a key={i} href={link.href} className={styles.link}>{link.title}</a>
-                        )
-                    })}
-                </div>
             </div>
 
         </div>
