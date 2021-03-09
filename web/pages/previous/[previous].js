@@ -36,7 +36,8 @@ const Previous = () => {
     return (
 
         <div className={styles.wrapper}>
-            <img className={styles.hero} src={data.image.asset.url} />
+
+            {data && data.image && <img className={styles.hero} src={data.image.asset.url} />}
             <div className={sharedStyles.wrapper}>
                 <div className={sharedStyles.container}>
                     <div className={styles.container}>
