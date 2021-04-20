@@ -9,7 +9,7 @@
     .container {
         display: flex;
         flex:1 1 100%;
-        padding:0 0 30px 30px;
+        padding:0 0 30px 80px;
     
     .informationSection {
         flex: 1 1 50%;
@@ -37,7 +37,7 @@
 
     .linkContainer {
         display: grid;
-        grid-template-columns: repeat(auto-fill, 20%);
+        grid-template-columns: repeat(auto-fill, 22%);
         grid-template-rows: repeat(auto-fill, 33%);
         column-gap:20px;
         row-gap: 20px;

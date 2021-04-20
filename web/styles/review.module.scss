@@ -10,11 +10,9 @@
     color:variables.$blue-colour;
     .sectionHeader {
         font-size: 2.3rem;
-        margin-bottom: 40px;
         text-transform: uppercase;
         text-align: center;
         color:variables.$blue-colour;
-
     }
 
     .reviewContent {
@@ -23,7 +21,10 @@
 
         .reviewItem {
             text-align: center;
-            h1 {
+            h2 {
+                text-transform: uppercase;
+                font-weight: 600;
+                font-size: 1.6rem;
                 color:variables.$blue-colour;
 
             }

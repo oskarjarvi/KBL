@@ -43,7 +43,7 @@ const NavigationBar = () => {
     return (
         <>
             <Navbar sticky="top" variant="dark" className={scrolling ? styles.scrollingNav : styles.navbar} collapseOnSelect expand="lg">
-                <Navbar.Brand href="/"><img src='/whiteLogo.svg' alt="KBL logo" style={{ width: 250, height: 60 }} /></Navbar.Brand>
+                <Navbar.Brand href="/"><img src='/whiteLogo.svg' alt="KBL logo" style={{ width: 250, height: 40 }} /></Navbar.Brand>
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav" className="justify-content-end">
 
@@ -62,17 +62,23 @@ const NavigationBar = () => {
                             <Link href="/dogHeaven" passHref><NavDropdown.Item>Hund himmelen</NavDropdown.Item></Link>
                         </NavDropdown>
                         {
-                            plannedData && plannedData.length === 0 ? <Nav.Item><Link href="/noPuppies"><a className="nav-link" style={{ color: 'white' }}>Planerade kullar</a></Link>
-                            </Nav.Item> :
+                            plannedData && plannedData.length === 0 ?
+                                <Nav.Item>
+                                    <Link href="/noPuppies">
+                                        <a className="nav-link" style={{ color: 'white' }}>
+                                            Planerade kullar
+                                        </a>
+                                    </Link>
+                                </Nav.Item> :
                                 <Dropdown as={NavItem}>
                                     <Dropdown.Toggle as={NavLink}>Planerade kullar</Dropdown.Toggle>
                                     <Dropdown.Menu>
                                         {
                                             plannedData && plannedData.map((link, i) =>
                                                 <Link href={{
-                                                    pathname: "planned/[planned]",
+                                                    pathname: "/planned/[planned]",
                                                     query: { slug: link.slug.current }
-                                                }} key={i} as={`planned/${link.slug.current}`} passHref><Dropdown.Item>{link.title}</Dropdown.Item></Link>)
+                                                }} key={i} as={`/planned/${link.slug.current}`} passHref><Dropdown.Item>{link.title}</Dropdown.Item></Link>)
                                         }
                                     </Dropdown.Menu>
                                 </Dropdown>
@@ -89,7 +95,7 @@ const NavigationBar = () => {
                                                 <Link href={{
                                                     pathname: "/puppies/[puppies]",
                                                     query: { slug: link.slug.current }
-                                                }} key={i} as={`/${link.slug.current}`} passHref><Dropdown.Item>{link.title}</Dropdown.Item></Link>)
+                                                }} key={i} as={`/puppies/${link.slug.current}`} passHref><Dropdown.Item>{link.title}</Dropdown.Item></Link>)
                                         }
                                     </Dropdown.Menu>
                                 </Dropdown>

@@ -6,26 +6,29 @@ import Link from 'next/link'
 // index.js
 const Dogs = (props) => {
     const { data = [] } = props
-    return (
-        <div className={styles.gridContainer}>
+    return data && (
+        <>
             <h1 className={styles.ourDogTitle}>Våra hundar</h1>
-            {data.map((item, i) => (
-                <Link href={{
-                    pathname: "/dogs/[slug]",
-                    query: { slug: item.slug.current }
-                }} as={`/dogs/${item.slug.current}`}
-                    key={i}>
-                    <div key={i} className={styles.dogTile}>
-                        <div style={{ backgroundImage: `url(${item.image.asset.url})` }} className={styles.dogoImage}>
-                            <h1 className={styles.dogoTitle}>
-                                {item.title}
-                            </h1>
+            <div className={styles.gridContainer}>
+
+                {data.map((item, i) => (
+                    <Link href={{
+                        pathname: "/dogs/[slug]",
+                        query: { slug: item.slug.current }
+                    }} as={`/dogs/${item.slug.current}`}
+                        key={i}>
+                        <div key={i} className={styles.dogTile}>
+                            <div style={{ backgroundImage: `url(${item.image.asset.url})` }} className={styles.dogoImage}>
+                                <h1 className={styles.dogoTitle}>
+                                    {item.title}
+                                </h1>
+                            </div>
                         </div>
-                    </div>
-                </Link>
-            )
-            )}
-        </div>
+                    </Link>
+                )
+                )}
+            </div>
+        </>
     )
 }
 export async function getStaticProps() {

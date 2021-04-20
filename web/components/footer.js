@@ -1,8 +1,6 @@
 import client from '../client'
 import { useEffect, useState } from 'react'
 import styles from '../styles/footer.module.scss'
-import sharedStyles from '../styles/shared.module.scss';
-
 
 const Footer = () => {
     const query = '*[_type == "contactInfo"]'

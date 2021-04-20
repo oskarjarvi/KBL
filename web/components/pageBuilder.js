@@ -2,7 +2,6 @@ import CTA from "./cta"
 import CTABlock from "./ctaBlock"
 import Gallery from "./gallery"
 import Hero from "./hero"
-import Link from "./link"
 import NewsFeed from './newsFeed'
 import TextWithIllustration from "./textWithIllustration"
 import Reviews from "./reviews"
@@ -14,8 +13,6 @@ const PageBuilder = (props) => {
         switch (type) {
             case 'hero':
                 return <Hero data={data} />
-            case 'link':
-                return <Link data={data} />
             case 'callToActionBlock':
                 return <CTABlock data={data} />
             case 'gallery':

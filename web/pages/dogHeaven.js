@@ -10,11 +10,6 @@ const DogHeaven = (props) => {
         <div className={styles.gridContainer}>
             <h1 className={styles.ourDogTitle}>Hundhimmelen</h1>
             {data.map((item, i) => (
-                // <Link href={{
-                //     pathname: "/dogs/[slug]",
-                //     query: { slug: item.slug.current }
-                // }} as={`/dogs/${item.slug.current}`}
-                //     key={i}>
                 <div key={i} className={styles.dogTile}>
                     <div style={{ backgroundImage: `url(${item.image.asset.url})` }} className={styles.dogoImage}>
                     </div>
@@ -22,9 +17,7 @@ const DogHeaven = (props) => {
                         {item.title}
                     </h1>
                     <p>{item.dateOfBirth + ' ' + item.dateOfDeath}</p>
-
                 </div>
-                // </Link>
             )
             )}
         </div>

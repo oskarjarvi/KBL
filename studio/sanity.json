@@ -1,7 +1,8 @@
 {
   "root": true,
   "project": {
-    "name": "KBL"
+    "name": "KBL",
+    "basePath": "/admin"
   },
   "api": {
     "projectId": "7wam4akj",
