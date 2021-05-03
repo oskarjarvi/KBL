@@ -53,7 +53,7 @@ const NavigationBar = () => {
                             <Link href="/"><a className="nav-link" style={{ color: 'white' }}>Hem</a></Link>
                         </Nav.Item>
                         <Nav.Item>
-                            <Link href="/om-oss"><a className="nav-link" style={{ color: 'white' }}>Om oss</a></Link>
+                            <Link href="/about"><a className="nav-link" style={{ color: 'white' }}>Om oss</a></Link>
                         </Nav.Item>
                         <NavDropdown title="Hundar">
                             <Link href="/dogs" passHref><NavDropdown.Item>Våra hundar</NavDropdown.Item></Link>

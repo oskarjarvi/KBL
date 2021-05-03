@@ -5,7 +5,7 @@ export default {
     initialValue: {
         title: 'Pias Kontaktuppgifter'
     },
-    __experimental_actions: [/*'create',*/ 'update', /*'delete',*/ 'publish'],
+    __experimental_actions: ['create', 'update', /*'delete',*/ 'publish'],
 
     // Input fields below, as many as you need.
     fields: [

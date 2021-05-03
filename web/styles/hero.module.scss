@@ -30,7 +30,15 @@
     }
     @media (max-width: 770px)
     {   
-        
+        .heroImageText {
+            
+            
+            .heroLogo {
+                width: 80vw;
+                height: 10vh;
+                object-fit: cover;
+            }
+        }
     }
 }
 

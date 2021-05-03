@@ -2,10 +2,10 @@ import PageBuilder from '../components/pageBuilder'
 import client from '../client'
 import styles from '../styles/about.module.scss'
 // index.js
-const About = (props) => {
-  return (
+const About = ({ data }) => {
+  return data && (
     <div className={styles.aboutPage}>
-      <PageBuilder data={props.data.content} />
+      <PageBuilder data={data.content} />
     </div>
   )
 }
@@ -36,7 +36,7 @@ export async function getStaticProps() {
     }[0]
     `)
   return {
-    props: { data }
+    props: { data: data }
   }
 }
 
