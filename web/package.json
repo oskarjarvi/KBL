@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "next",
     "build": "next build",
-    "postbuild": "next-on-netlify"
+    "start": "next start"
   },
   "keywords": [],
   "author": "",
