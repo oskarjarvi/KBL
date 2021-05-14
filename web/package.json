@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "next",
     "build": "next build",
-    "start": "next start"
+    "postbuild": "next-on-netlify"
   },
   "keywords": [],
   "author": "",
@@ -17,6 +17,7 @@
     "bootstrap": "^4.6.0",
     "groq": "^2.2.6",
     "next": "^10.0.5",
+    "next-on-netlify": "^3.0.1",
     "react": "^17.0.1",
     "react-bootstrap": "^1.4.3",
     "react-dom": "^17.0.1",
