@@ -31,7 +31,7 @@ const Foder = (props) => {
         </>
     )
 }
-export async function getStaticProps() {
+export async function getServerSideProps() {
 
     let data = await client.fetch(`
     *[_type == "dog" && foder] {

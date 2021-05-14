@@ -23,7 +23,7 @@ const DogHeaven = (props) => {
         </div>
     )
 }
-export async function getStaticProps() {
+export async function getServerSideProps() {
 
     let data = await client.fetch(`
     *[_type == "dog" && dead] {

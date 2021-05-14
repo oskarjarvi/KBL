@@ -39,7 +39,7 @@ const Previous = (props) => {
         </div>
     )
 }
-export async function getStaticProps() {
+export async function getServerSideProps() {
 
     let data = await client.fetch(`
     *[_type == "litter"] {

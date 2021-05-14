@@ -9,7 +9,7 @@ const About = ({ data }) => {
     </div>
   )
 }
-export async function getStaticProps() {
+export async function getServerSideProps() {
 
   let data = await client.fetch(`
     *[_type == "page" && slug.current =='om-oss'] {
