@@ -64,7 +64,7 @@ const NavigationBar = () => {
                         {
                             plannedData && plannedData.length === 0 ?
                                 <Nav.Item>
-                                    <Link href="/noPuppies">
+                                    <Link href="/noPlans">
                                         <a className="nav-link" style={{ color: 'white' }}>
                                             Planerade kullar
                                         </a>
