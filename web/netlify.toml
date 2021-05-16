@@ -3,3 +3,9 @@
   to = "/dogs/[slug].html"
   status = 200
   force = true
+[build]
+  command = "npm run build"
+  publish = "out"
+
+[[plugins]]
+  package = "@netlify/plugin-nextjs"
