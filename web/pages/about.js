@@ -12,7 +12,7 @@ const About = ({ data }) => {
 export async function getServerSideProps() {
 
   let data = await client.fetch(`
-    *[_type == "page" && slug.current =='om-oss'] {
+    *[_type == "page" && slug.current =='about'] {
       content[] {
         logo {
           "image": asset ->
