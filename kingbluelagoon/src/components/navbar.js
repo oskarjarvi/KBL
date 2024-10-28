@@ -46,7 +46,7 @@ const NavigationBar = () => {
                 <Navbar.Brand href="/"><img src='/whiteLogo.svg' alt="KBL logo" style={{ width: 250, height: 40 }} /></Navbar.Brand>
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav" className="justify-content-end">
-                    <Nav style={{ paddingLeft: 10, paddingRight:10 }}>
+                    <Nav style={{ paddingLeft: 10, paddingRight: 10 }}>
                         <Nav.Item>
                             <Link href="/" className="nav-link" style={{ color: 'white' }} passHref>Hem</Link>
                         </Nav.Item>
@@ -54,17 +54,15 @@ const NavigationBar = () => {
                             <Link href="/about" className="nav-link" style={{ color: 'white' }} passHref>Om oss</Link>
                         </Nav.Item>
                         <NavDropdown title="Hundar">
-                            <Link href="/dogs" passHref><NavDropdown.Item>Våra hundar</NavDropdown.Item></Link>
-                            <Link href="/previous" passHref><NavDropdown.Item>Tidigare kullar</NavDropdown.Item></Link>
-                            <Link href="/foder" passHref><NavDropdown.Item>Foderhundar</NavDropdown.Item></Link>
-                            <Link href="/dogHeaven" passHref><NavDropdown.Item>Hund himmelen</NavDropdown.Item></Link>
+                            <NavDropdown.Item as={Link} href="/dogs">Våra hundar</NavDropdown.Item>
+                            <NavDropdown.Item as={Link} href="/previous">Tidigare kullar</NavDropdown.Item>
+                            <NavDropdown.Item as={Link} href="/foder">Foderhundar</NavDropdown.Item>
+                            <NavDropdown.Item as={Link} href="/dogHeaven">Hund himmelen</NavDropdown.Item>
                         </NavDropdown>
                         {
                             plannedData && plannedData.length === 0 ?
-                                <Nav.Item>
-                                    <Link href="/noPlans" className="nav-link" style={{ color: 'white' }} passHref>
-                                            Planerade kullar
-                                    </Link>
+                                <Nav.Item as={Link} href="/noPlans" className="nav-link" style={{ color: 'white' }}>
+                                    Planerade kullar
                                 </Nav.Item> :
                                 <Dropdown as={NavItem}>
                                     <Dropdown.Toggle as={NavLink}>Planerade kullar</Dropdown.Toggle>
