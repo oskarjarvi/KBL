@@ -2,7 +2,7 @@ import groq from 'groq'
 import { useEffect, useState } from 'react'
 import { useRouter } from 'next/router'
 
-import { client } from '../../client'
+import { client } from '../../sanity/lib/client'
 import styles from '../../styles/previous.module.scss'
 import Gallery from '../../components/gallery'
 import SwappableContainer from '../../components/swappableContainer'
