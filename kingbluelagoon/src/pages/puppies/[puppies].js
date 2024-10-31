@@ -12,9 +12,9 @@ const Puppies = () => {
     const router = useRouter()
 
     useEffect(() => {
-
-        if (router.query.slug !== undefined) {
-            let query = groq`*[_type == "litter" && slug.current == "${router.query.slug}"][0]{
+        console.log(router.query)
+        if (router.query.puppies !== undefined) {
+            let query = groq`*[_type == "litter" && slug.current == "${router.query.puppies}"][0]{
         title, dateOfBirth, description, mum,
         inbredPercentage,
         imageOfMum{asset->{url}},
@@ -30,7 +30,7 @@ const Puppies = () => {
                 setData(res)
             })
         }
-    }, [router.query.slug])
+    }, [router.query.puppies])
 
 
     return data && (

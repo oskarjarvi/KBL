@@ -78,19 +78,24 @@ const NavigationBar = () => {
                                 </Dropdown>
                         }
                         {
-                            activeData && activeData.length === 0 ? <Nav.Item><Link href="/noPuppies" className="nav-link" style={{ color: 'white' }} passHref>Valpar</Link>
-
+                            activeData && activeData.length === 0 ? <Nav.Item as={Link} href={"/noPuppies"} className="nav-link" style={{ color: 'white' }} >Valpar
                             </Nav.Item> :
                                 <Dropdown as={NavItem}>
                                     <Dropdown.Toggle as={NavLink}>Valpar</Dropdown.Toggle>
                                     <Dropdown.Menu>
-                                        {
-                                            activeData && activeData.map((link, i) =>
-                                                <Link href={{
-                                                    pathname: "/puppies/[puppies]",
-                                                    query: { slug: link.slug.current }
-                                                }} key={i} as={`/puppies/${link.slug.current}`} passHref><Dropdown.Item>{link.title}</Dropdown.Item></Link>)
-                                        }
+                                        {activeData &&
+                                            activeData.map((link, i) => (
+                                                <Dropdown.Item
+                                                    key={i}
+                                                    as={Link}
+                                                    href={{
+                                                        pathname: `/puppies/[puppies]`,
+                                                        query: { puppies: link.slug.current },
+                                                    }}
+                                                >
+                                                    {link.title}
+                                                </Dropdown.Item>
+                                            ))}
                                     </Dropdown.Menu>
                                 </Dropdown>
                         }
